@@ -7,7 +7,7 @@ kubectl treeを痒いところに手が届くようにした感じ
 [kubectl tree](https://github.com/ahmetb/kubectl-tree)はリソースの親子関係を表示してくれるが、たとえばPVの表示はサポートしてなかったりする。kubectl-neo-tree(kubectl-nt)はkubectl treeがサポートしてないようなリソースの親子関係を表示する。
 
 
-# Usgae
+# Usage
 
 ## install
 
