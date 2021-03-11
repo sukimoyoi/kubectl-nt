@@ -4,7 +4,13 @@ kubectl treeを痒いところに手が届くようにした感じ
 
 ## Purpose
 
-[kubectl tree](https://github.com/ahmetb/kubectl-tree)はリソースの親子関係を表示してくれるが、たとえばPVの表示はサポートしてなかったりする。kubectl-neo-tree(kubectl-nt)はkubectl treeがサポートしてないようなリソースの親子関係を表示する。
+[kubectl tree](https://github.com/ahmetb/kubectl-tree)は`ownerReferences`によるリソースの親子関係を表示してくれるが、このフィールド以外で確立されている親子関係にはついてはサポートしていない。(例: StorageClassとPersistentVolumeの関係）
+
+kubectl-neo-treeは`ownerReferences`に囚われないリソースの親子関係をtreeで表示し、下記のような確認を簡単にしたい。
+
+- PersistentVolumeClaim, PersistentVolume, StorageClassの親子関係で、どのボリュームが何のタイプのストレージに紐づくかを確認できる
+- ClusterRole, PodSecurityPolicies, ServiceAccount, ClusterRoleBindingの親子関係で、不正な ServicAccount に間違えて権限を紐づけてないかを確認できる
+- Ingress, Service, Podの親子関係で、どのエンドポイントにアクセスするとどのアプリケーションにアクセスできるかが見える
 
 
 # Usage
